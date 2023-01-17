@@ -1,20 +1,23 @@
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
+import {
+  FeedbackOptionsList,
+  FeedbackOptionsBtn,
+} from './FeedbackOptions.styles';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => (
-  <div className="feedback__list">
+  <FeedbackOptionsList>
     {options.map(option => (
-      <button
+      <FeedbackOptionsBtn
         key={shortid.generate()}
         name={option}
         type="button"
         onClick={onLeaveFeedback}
-        className="feedback__item"
       >
         {option}
-      </button>
+      </FeedbackOptionsBtn>
     ))}
-  </div>
+  </FeedbackOptionsList>
 );
 
 FeedbackOptions.propTypes = {
